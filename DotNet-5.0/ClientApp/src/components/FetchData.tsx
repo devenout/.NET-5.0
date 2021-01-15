@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ type WeatherForecastProps =
   & RouteComponentProps<{ startDateIndex: string }>; // ... plus incoming routing parameters
 
 
-class FetchData extends React.PureComponent<WeatherForecastProps> {
+class FetchData extends PureComponent<WeatherForecastProps> {
   // This method is called when the component is first added to the document
   public componentDidMount() {
     this.ensureDataFetched();
@@ -25,12 +25,12 @@ class FetchData extends React.PureComponent<WeatherForecastProps> {
 
   public render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <h1 id="tabelLabel">Weather forecast</h1>
         <p>This component demonstrates fetching data from the server and working with URL parameters.</p>
         {this.renderForecastsTable()}
         {this.renderPagination()}
-      </React.Fragment>
+      </Fragment>
     );
   }
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { ApplicationState } from '../store';
@@ -9,10 +9,10 @@ type CounterProps =
     typeof CounterStore.actionCreators &
     RouteComponentProps<{}>;
 
-class Counter extends React.PureComponent<CounterProps> {
+class Counter extends PureComponent<CounterProps> {
     public render() {
         return (
-            <React.Fragment>
+            <Fragment>
                 <h1>Counter</h1>
 
                 <p>This is a simple example of a React component.</p>
@@ -24,7 +24,7 @@ class Counter extends React.PureComponent<CounterProps> {
                     onClick={() => { this.props.increment(); }}>
                     Increment
                 </button>
-            </React.Fragment>
+            </Fragment>
         );
     }
 };
